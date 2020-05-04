@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Coach</title>
+</head>
+<body>
+
+<h2>Coaches</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th style="width: 150px;">Id</th>
+        <th style="width: 150px;">First name</th>
+        <th style="width: 150px;">Last name</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="coach : ${coaches}">
+        <td th:text="${coach.id}">1</td>
+        <td th:text="${coach.name}">Joe</td>
+        <td th:text="${coach.surname}">Buck</td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>

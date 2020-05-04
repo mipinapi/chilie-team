@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Team</title>
+</head>
+<body>
+
+<h2>Team</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th style="width: 150px;">Id</th>
+        <th style="width: 150px;">Team</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="team : ${teams}">
+        <td th:text="${team.id}">1</td>
+        <td th:text="${team.name}">FC Real Madrid</td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>
