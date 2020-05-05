@@ -8,16 +8,8 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-@Data
-@Entity
-public class Player {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    private String name;
-    private String surname;
+public class Player extends Person {
 
     @ManyToMany(mappedBy = "players")
     private Set<Team> teams = new HashSet<>();
@@ -30,20 +22,19 @@ public class Player {
     }
 
     public Player(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
+        super();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Player player = (Player) o;
-        return Objects.equals(id, player.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Player player = (Player) o;
+//        return Objects.equals(id, player.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id);
+//    }
 }

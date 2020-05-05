@@ -1,7 +1,6 @@
 package org.springframework.chilieteam.controller;
 
-
-import org.springframework.chilieteam.repositories.PlayerRepository;
+import org.springframework.chilieteam.services.PlayerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,17 +13,16 @@ import java.util.List;
 @RequestMapping("/players")
 public class PlayerController {
 
-    private final PlayerRepository playerRepository;
+    private final PlayerService playerService;
 
-    public PlayerController(PlayerRepository playerRepository) {
-        this.playerRepository = playerRepository;
+    public PlayerController(PlayerService playerService) {
+        this.playerService = playerService;
     }
 
     @GetMapping({"", "/"})
     public String getPlayers(Model model) {
 
-        model.addAttribute("players", playerRepository.findAll());
-
+        model.addAttribute("players", playerService.findAll());
         return "players";
     }
 }

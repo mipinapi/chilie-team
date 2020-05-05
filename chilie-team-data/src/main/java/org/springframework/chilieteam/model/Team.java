@@ -8,13 +8,8 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-@Data
-@Entity
-public class Team {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class Team extends BaseEntity {
 
     private String name;
 
@@ -31,16 +26,32 @@ public class Team {
         this.name = name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Team team = (Team) o;
-        return Objects.equals(id, team.id);
+    public String getName() {
+        return name;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+    public void setName(String name) {
+        this.name = name;
     }
+
+    public Set<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(Set<Player> players) {
+        this.players = players;
+    }
+
+    //    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Team team = (Team) o;
+//        return Objects.equals(id, team.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id);
+//    }
 }

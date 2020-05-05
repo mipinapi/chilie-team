@@ -2,9 +2,7 @@ package org.springframework.chilieteam.model;
 
 
 
-public class FavouriteClubs {
-
-    private Long id;
+public class FavouriteClubs extends BaseEntity {
 
     private String name;
 

@@ -7,12 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-@Data
-public class Statistics {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class Statistics extends BaseEntity{
 
     @OneToOne
     private Player player;

@@ -7,16 +7,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-@Data
-@Entity
-public class Coach {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    private String name;
-    private String surname;
+public class Coach extends Person {
 
     @OneToMany
     @JoinColumn(name = "coach_id")
@@ -27,20 +18,19 @@ public class Coach {
     }
 
     public Coach(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
+        super();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Coach coach = (Coach) o;
-        return Objects.equals(id, coach.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Coach coach = (Coach) o;
+//        return Objects.equals(id, coach.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id);
+//    }
 }

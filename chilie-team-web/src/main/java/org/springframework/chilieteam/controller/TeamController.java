@@ -1,8 +1,7 @@
 package org.springframework.chilieteam.controller;
 
-import org.springframework.chilieteam.repositories.TeamRepository;
+import org.springframework.chilieteam.services.TeamService;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,16 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/team")
 public class TeamController {
 
-    private final TeamRepository teamRepository;
+    private final TeamService teamService;
 
-    public TeamController(TeamRepository teamRepository) {
-        this.teamRepository = teamRepository;
+    public TeamController(TeamService teamService) {
+        this.teamService = teamService;
     }
 
     @GetMapping({"", "/"})
     public String getTeams(Model model) {
-
-        model.addAttribute("teams", teamRepository.findAll());
+        model.addAttribute("teams", teamService.findAll());
         return "team";
     }
 }

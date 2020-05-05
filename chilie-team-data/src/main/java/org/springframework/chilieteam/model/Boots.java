@@ -5,13 +5,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Data
-@Entity
-public class Boots {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class Boots extends BaseEntity {
 
     private String name;
 
