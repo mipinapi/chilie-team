@@ -3,11 +3,13 @@ package org.springframework.chilieteam.services.map;
 import org.springframework.chilieteam.model.Place;
 import org.springframework.chilieteam.model.Player;
 import org.springframework.chilieteam.services.PlaceService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class PlaceServiceMap extends AbstractServiceMap<Place, Long> implements PlaceService {
 
     @Override

@@ -3,11 +3,13 @@ package org.springframework.chilieteam.services.map;
 import org.springframework.chilieteam.model.Boots;
 import org.springframework.chilieteam.services.BootsService;
 import org.springframework.chilieteam.services.CrudService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class BootsServiceMap extends AbstractServiceMap<Boots, Long> implements BootsService {
 
     @Override

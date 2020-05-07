@@ -1,26 +1,28 @@
 package org.springframework.chilieteam.services.map;
 
-import org.springframework.chilieteam.model.Statistics;
+import org.springframework.chilieteam.model.Statistic;
 import org.springframework.chilieteam.services.StatisticService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class StatisticServiceMap extends AbstractServiceMap<Statistics, Long> implements StatisticService {
+@Profile({"default", "map"})
+public class StatisticServiceMap extends AbstractServiceMap<Statistic, Long> implements StatisticService {
 
     @Override
-    public Set<Statistics> findAll() {
+    public Set<Statistic> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Statistics findById(Long id) {
+    public Statistic findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Statistics save(Statistics object) {
+    public Statistic save(Statistic object) {
         return super.save(object);
     }
 
@@ -30,7 +32,7 @@ public class StatisticServiceMap extends AbstractServiceMap<Statistics, Long> im
     }
 
     @Override
-    public void delete(Statistics object) {
+    public void delete(Statistic object) {
         super.delete(object);
     }
 }

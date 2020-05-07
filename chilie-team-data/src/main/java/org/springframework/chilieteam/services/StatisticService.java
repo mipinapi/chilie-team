@@ -1,7 +1,6 @@
 package org.springframework.chilieteam.services;
 
-import org.springframework.chilieteam.model.Player;
-import org.springframework.chilieteam.model.Statistics;
+import org.springframework.chilieteam.model.Statistic;
 
-public interface StatisticService extends CrudService<Statistics, Long> {
+public interface StatisticService extends CrudService<Statistic, Long> {
 }

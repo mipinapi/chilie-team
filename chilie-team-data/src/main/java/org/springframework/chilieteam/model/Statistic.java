@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "statistics")
-public class Statistics extends BaseEntity{
+public class Statistic extends BaseEntity{
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "player_id")

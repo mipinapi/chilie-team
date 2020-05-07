@@ -4,11 +4,13 @@ import org.springframework.chilieteam.model.Player;
 import org.springframework.chilieteam.model.Team;
 import org.springframework.chilieteam.services.CrudService;
 import org.springframework.chilieteam.services.TeamService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class TeamServiceMap extends AbstractServiceMap<Team, Long> implements TeamService {
 
     @Override

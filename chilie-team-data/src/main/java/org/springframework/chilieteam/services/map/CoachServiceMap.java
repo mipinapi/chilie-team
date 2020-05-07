@@ -6,11 +6,13 @@ import org.springframework.chilieteam.model.Team;
 import org.springframework.chilieteam.services.CoachService;
 import org.springframework.chilieteam.services.CrudService;
 import org.springframework.chilieteam.services.FootballStyleService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class CoachServiceMap extends AbstractServiceMap<Coach, Long> implements CoachService {
 
     private final FootballStyleService footballStyleService;

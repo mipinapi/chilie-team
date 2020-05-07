@@ -2,11 +2,13 @@ package org.springframework.chilieteam.services.map;
 
 import org.springframework.chilieteam.model.FootballStyle;
 import org.springframework.chilieteam.services.FootballStyleService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class FootballStyleServiceMap extends AbstractServiceMap<FootballStyle, Long> implements FootballStyleService {
 
     @Override
