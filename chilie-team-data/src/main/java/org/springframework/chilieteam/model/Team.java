@@ -9,10 +9,15 @@ import java.util.Objects;
 import java.util.Set;
 
 
+@Entity
+@Table(name = "teams")
 public class Team extends BaseEntity {
 
+    @Column(name = "name")
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name = "place_id")
     private Place place;
 
     @ManyToMany

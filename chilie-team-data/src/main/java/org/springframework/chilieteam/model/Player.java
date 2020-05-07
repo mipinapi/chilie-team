@@ -8,17 +8,23 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-
+@Data
+@Entity
+@Table(name = "players")
 public class Player extends Person {
 
+    @Column(name = "country")
     private String country;
 
     @ManyToMany(mappedBy = "players")
     private Set<Team> teams = new HashSet<>();
 
     @ManyToOne
+    @JoinColumn(name = "coach_id")
     private Coach coach;
 
+    @ManyToOne
+    @JoinColumn(name = "boots_id")
     private Boots boots;
 
     @ManyToMany(mappedBy = "players")

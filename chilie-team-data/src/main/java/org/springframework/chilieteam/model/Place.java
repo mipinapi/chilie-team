@@ -1,7 +1,14 @@
 package org.springframework.chilieteam.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "places")
 public class Place extends BaseEntity {
 
+    @Column(name = "description")
     private String description;
 
     public String getDescription() {

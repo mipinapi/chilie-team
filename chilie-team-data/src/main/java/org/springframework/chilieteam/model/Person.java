@@ -2,15 +2,16 @@ package org.springframework.chilieteam.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
+@MappedSuperclass
 public class Person extends BaseEntity {
 
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "surname")
     private String surname;
 
     public Person() {
