@@ -1,14 +1,23 @@
 package org.springframework.chilieteam.services.map;
 
 import org.springframework.chilieteam.model.Player;
-import org.springframework.chilieteam.services.CrudService;
-import org.springframework.chilieteam.services.PlayerService;
+import org.springframework.chilieteam.model.Team;
+import org.springframework.chilieteam.services.*;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
 public class PlayerServiceMap extends AbstractServiceMap<Player, Long> implements PlayerService {
+
+    private final TeamService teamService;
+    private final PlaceService placeService;
+
+    public PlayerServiceMap(TeamService teamService, PlaceService placeService) {
+        this.teamService = teamService;
+        this.placeService = placeService;
+    }
+
 
     @Override
     public Player findById(Long id) {
@@ -17,7 +26,31 @@ public class PlayerServiceMap extends AbstractServiceMap<Player, Long> implement
 
     @Override
     public Player save(Player object) {
-        return super.save(object);
+
+        Player savedPlayer = null;
+
+        if (object != null) {
+            if (object.getTeams() != null) {
+                object.getTeams().forEach(team -> {
+                    if (team.getPlace() != null) {
+                        if (team.getPlace().getId() == null) {
+                            team.setPlace(placeService.save(team.getPlace()));
+                        }
+                    } else {
+                        throw new RuntimeException("Place is required");
+                    }
+
+                    if (team.getId() == null) {
+                        Team savedTeam = teamService.save(team);
+                        team.setId(savedTeam.getId());
+                    }
+
+                });
+            }
+            return super.save(object);
+        } else {
+            return null;
+        }
     }
 
     @Override

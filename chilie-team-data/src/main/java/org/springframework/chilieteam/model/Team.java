@@ -13,6 +13,8 @@ public class Team extends BaseEntity {
 
     private String name;
 
+    private Place place;
+
     @ManyToMany
     @JoinTable(name = "team_player", joinColumns = @JoinColumn(name = "team_id"),
                 inverseJoinColumns = @JoinColumn(name = "player_id"))
@@ -42,16 +44,11 @@ public class Team extends BaseEntity {
         this.players = players;
     }
 
-    //    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        Team team = (Team) o;
-//        return Objects.equals(id, team.id);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id);
-//    }
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
+    }
 }

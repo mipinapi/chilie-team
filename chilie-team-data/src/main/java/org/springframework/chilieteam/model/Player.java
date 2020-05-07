@@ -11,11 +11,18 @@ import java.util.Set;
 
 public class Player extends Person {
 
+    private String country;
+
     @ManyToMany(mappedBy = "players")
     private Set<Team> teams = new HashSet<>();
 
     @ManyToOne
     private Coach coach;
+
+    private Boots boots;
+
+    @ManyToMany(mappedBy = "players")
+    private Set<Match> matches = new HashSet<>();
 
     public Player() {
 
@@ -25,16 +32,44 @@ public class Player extends Person {
         super();
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        Player player = (Player) o;
-//        return Objects.equals(id, player.id);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id);
-//    }
+    public Set<Team> getTeams() {
+        return teams;
+    }
+
+    public void setTeams(Set<Team> teams) {
+        this.teams = teams;
+    }
+
+    public Coach getCoach() {
+        return coach;
+    }
+
+    public void setCoach(Coach coach) {
+        this.coach = coach;
+    }
+
+    public Boots getBoots() {
+        return boots;
+    }
+
+    public void setBoots(Boots boots) {
+        this.boots = boots;
+    }
+
+    public Set<Match> getMatches() {
+        return matches;
+    }
+
+    public void setMatches(Set<Match> matches) {
+        this.matches = matches;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
 }

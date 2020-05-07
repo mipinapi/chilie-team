@@ -1,26 +1,26 @@
 package org.springframework.chilieteam.services.map;
 
-import org.springframework.chilieteam.model.Statistics;
-import org.springframework.chilieteam.services.StatisticService;
+import org.springframework.chilieteam.model.FootballStyle;
+import org.springframework.chilieteam.services.FootballStyleService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class StatisticServiceMap extends AbstractServiceMap<Statistics, Long> implements StatisticService {
+public class FootballStyleServiceMap extends AbstractServiceMap<FootballStyle, Long> implements FootballStyleService {
 
     @Override
-    public Set<Statistics> findAll() {
+    public Set<FootballStyle> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Statistics findById(Long id) {
+    public FootballStyle findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Statistics save(Statistics object) {
+    public FootballStyle save(FootballStyle object) {
         return super.save(object);
     }
 
@@ -30,7 +30,8 @@ public class StatisticServiceMap extends AbstractServiceMap<Statistics, Long> im
     }
 
     @Override
-    public void delete(Statistics object) {
+    public void delete(FootballStyle object) {
         super.delete(object);
     }
 }
+

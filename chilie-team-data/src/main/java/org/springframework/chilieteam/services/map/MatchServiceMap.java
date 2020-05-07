@@ -1,32 +1,31 @@
 package org.springframework.chilieteam.services.map;
 
-import org.springframework.chilieteam.model.Boots;
-import org.springframework.chilieteam.services.BootsService;
-import org.springframework.chilieteam.services.CrudService;
+import org.springframework.chilieteam.model.Match;
+import org.springframework.chilieteam.services.MatchService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class BootsServiceMap extends AbstractServiceMap<Boots, Long> implements BootsService {
+public class MatchServiceMap extends AbstractServiceMap<Match, Long> implements MatchService {
 
     @Override
-    public Set<Boots> findAll() {
+    public Set<Match> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Boots findById(Long id) {
+    public Match findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Boots save(Boots object) {
+    public Match save(Match object) {
         return super.save(object);
     }
 
     @Override
-    public void delete(Boots object) {
+    public void delete(Match object) {
         super.delete(object);
     }
 

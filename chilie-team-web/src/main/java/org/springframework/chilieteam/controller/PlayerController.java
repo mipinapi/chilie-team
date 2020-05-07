@@ -21,8 +21,14 @@ public class PlayerController {
 
     @GetMapping({"", "/"})
     public String getPlayers(Model model) {
-
         model.addAttribute("players", playerService.findAll());
         return "players";
+    }
+
+
+    @GetMapping("/find")
+    public String findPlayers() {
+
+        return "notimplemented";
     }
 }

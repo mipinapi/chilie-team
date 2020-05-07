@@ -10,9 +10,6 @@ public class Boots extends BaseEntity {
 
     private String name;
 
-    @ManyToOne
-    private BootsProducer bootsProducer;
-
     public Boots() {
     }
 

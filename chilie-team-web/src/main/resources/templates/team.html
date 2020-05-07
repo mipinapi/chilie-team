@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'team')}">
 <head>
     <meta charset="UTF-8">
     <title>Team</title>
 </head>
 <body>
 
-<h2>Team</h2>
+<h2>Teams</h2>
 
-<table>
+<table class="table table-striped">
     <thead>
     <tr>
         <th style="width: 150px;">Id</th>
         <th style="width: 150px;">Team</th>
+        <th style="width: 150px;">Place</th>
     </tr>
     </thead>
 
@@ -20,6 +21,7 @@
     <tr th:each="team : ${teams}">
         <td th:text="${team.id}">1</td>
         <td th:text="${team.name}">FC Real Madrid</td>
+        <td th:text="${team.getPlace().getDescription()}">Spain</td>
     </tr>
     </tbody>
 
