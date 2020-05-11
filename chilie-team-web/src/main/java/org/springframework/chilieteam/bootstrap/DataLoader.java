@@ -56,6 +56,9 @@ public class DataLoader implements CommandLineRunner {
         Player player1 = new Player();
         player1.setName("Robin");
         player1.setSurname("Van Persie");
+
+//        coachService.save(Coach.builder().name("Jose").surname("Mourinho").build());
+
         Team feyernoord = new Team();
         feyernoord.setName("FC Feyernoord");
         feyernoord.setPlace(netherlands);

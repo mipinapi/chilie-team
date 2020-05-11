@@ -1,12 +1,16 @@
 package org.springframework.chilieteam.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "styles")
 public class FootballStyle extends BaseEntity {
@@ -14,11 +18,4 @@ public class FootballStyle extends BaseEntity {
     @Column(name = "description")
     private String description;
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

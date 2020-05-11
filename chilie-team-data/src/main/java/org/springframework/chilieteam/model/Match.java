@@ -1,6 +1,6 @@
 package org.springframework.chilieteam.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -8,6 +8,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "matches")
 public class Match extends BaseEntity {

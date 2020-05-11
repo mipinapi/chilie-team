@@ -1,9 +1,14 @@
 package org.springframework.chilieteam.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "statistics")
 public class Statistic extends BaseEntity{

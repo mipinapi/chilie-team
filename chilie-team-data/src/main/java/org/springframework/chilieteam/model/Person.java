@@ -1,12 +1,21 @@
 package org.springframework.chilieteam.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @MappedSuperclass
 public class Person extends BaseEntity {
+
+    public Person(Long id, String name, String surname) {
+        super(id);
+        this.name = name;
+        this.surname = surname;
+    }
 
     @Column(name = "name")
     private String name;
@@ -14,28 +23,4 @@ public class Person extends BaseEntity {
     @Column(name = "surname")
     private String surname;
 
-    public Person() {
-    }
-
-    public Person(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
-    }
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
 }

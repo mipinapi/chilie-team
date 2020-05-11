@@ -1,14 +1,18 @@
 package org.springframework.chilieteam.model;
 
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "teams")
 public class Team extends BaseEntity {
@@ -25,35 +29,4 @@ public class Team extends BaseEntity {
                 inverseJoinColumns = @JoinColumn(name = "player_id"))
     private Set<Player> players = new HashSet<>();
 
-    public Team() {
-
-    }
-
-    public Team(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Set<Player> getPlayers() {
-        return players;
-    }
-
-    public void setPlayers(Set<Player> players) {
-        this.players = players;
-    }
-
-    public Place getPlace() {
-        return place;
-    }
-
-    public void setPlace(Place place) {
-        this.place = place;
-    }
 }
