@@ -20,6 +20,7 @@ public class Coach extends Person {
         this.footballStyles = footballStyles;
         this.players = players;
     }
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "coaches_styles", joinColumns = @JoinColumn(name = "coach_id"),
                 inverseJoinColumns = @JoinColumn(name = "style_id"))

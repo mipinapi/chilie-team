@@ -72,6 +72,10 @@ public class PlayerServiceMap extends AbstractServiceMap<Player, Long> implement
 
     @Override
     public Player findBySurname(String surname) {
-        return map.get(surname);
+        return this.findAll()
+                .stream()
+                .filter(player -> player.getSurname().equalsIgnoreCase(surname))
+                .findFirst()
+                .orElse(null);
     }
 }
